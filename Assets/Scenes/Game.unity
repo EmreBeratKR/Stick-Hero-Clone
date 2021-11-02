@@ -215,11 +215,35 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1065092556}
+          m_TargetAssemblyTypeName: StickManager, Assembly-CSharp
+          m_MethodName: userInput
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1065092556}
+          m_TargetAssemblyTypeName: StickManager, Assembly-CSharp
+          m_MethodName: userInput
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &395227850
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +440,7 @@ GameObject:
   - component: {fileID: 1065092556}
   m_Layer: 0
   m_Name: Managers
-  m_TagString: Untagged
+  m_TagString: Managers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -434,10 +458,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pillarPrefab: {fileID: 5028585273000494356, guid: 6c74220925a3446dca0dde4490d836bc, type: 3}
-  min_ScaleX: 0.4
-  max_ScaleX: 2
-  min_PosX: 2.5
-  max_PosX: 8
+  min_ScaleX: 0.6
+  max_ScaleX: 3
+  min_PosX: 3.5
+  max_PosX: 6.5
   moveDuration: 0.8
   spawnOffsetX: 15
 --- !u!4 &1065092555
@@ -468,6 +492,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stickPrefab: {fileID: 4869547014681730005, guid: 753f3f76442734971b8d40f651117b08, type: 3}
   stickOffsetX: 0.1
+  growSpeed: 2
+  fallDuration: 1
 --- !u!1 &1593489566
 GameObject:
   m_ObjectHideFlags: 0

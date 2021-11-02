@@ -43,16 +43,21 @@ public class PillarManager : MonoBehaviour
         return newPillar;
     }
 
-    IEnumerator moveNext()
+    public IEnumerator moveNext()
     {
+        stickManager.stick.LeanMoveX(-stickManager.stick.transform.localScale.y, moveDuration).setEaseOutQuint();
         currentPillar.LeanMoveX(-2f, moveDuration).setEaseOutQuint();
         targetPillar.LeanMoveX(0f, moveDuration).setEaseOutQuint();
         GameObject newPillar = spawnPillar();
 
         yield return new WaitForSeconds(moveDuration);
 
+        Destroy(stickManager.stick);
         Destroy(currentPillar);
         currentPillar = targetPillar;
         targetPillar = newPillar;
+        stickManager.spawnStick();
+
+        stickManager.canGrow = true;
     }
 }
