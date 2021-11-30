@@ -494,6 +494,9 @@ MonoBehaviour:
   stickOffsetX: 0.1
   growSpeed: 2
   fallDuration: 1
+  pillarLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1593489566
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,9 +8,9 @@ public class StickManager : MonoBehaviour
     [SerializeField] private float stickOffsetX;
     [SerializeField] private float growSpeed;
     [SerializeField] private float fallDuration;
+    [SerializeField] private LayerMask pillarLayer;
     private bool isGrowing = false;
     [System.NonSerialized] public bool canGrow = true;
-    [System.NonSerialized] public bool success;
     [System.NonSerialized] public GameObject stick;
     private PillarManager pillarManager;
 
@@ -54,18 +54,18 @@ public class StickManager : MonoBehaviour
 
     IEnumerator fallStick()
     {
-        success = false;
         stick.LeanRotateZ(-90f, fallDuration).setEaseInQuint();
 
-        yield return new WaitForSeconds(fallDuration + 0.5f);
-        
-        if (success)
+        yield return new WaitForSeconds(fallDuration + 0.3f);
+
+        RaycastHit2D ray = Physics2D.Raycast((Vector2)stick.transform.position + new Vector2(stick.transform.localScale.y, 0f), Vector2.down, 2f, pillarLayer);
+        if (ray.collider != null)
         {
             StartCoroutine(pillarManager.moveNext());
         }
         else
         {
-            Debug.Log("Failed!");
+            Debug.Log("Game Over!");
         }
     }
 }
